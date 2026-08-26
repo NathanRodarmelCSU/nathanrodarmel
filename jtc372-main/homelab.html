@@ -1,0 +1,169 @@
+<!--
+Name: Nathan Rodarmel
+Personal Portfolio Website
+homelab.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Lab | Nathan Rodarmel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ========== Navigation ========== -->
+<nav>
+    <div class="nav__content">
+        <div class="logo"><a href="index.html">Nathan Rodarmel</a></div>
+
+        <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <a href="contact.html" class="nav__button">Contact Me</a>
+    </div>
+</nav>
+
+<!-- ========== Home Lab Section ========== -->
+<section class="section secondary-page homelab-page">
+    <div class="secondary-container">
+
+        <!-- Page Header -->
+        <div class="secondary-header">
+            <p class="page-subtitle">Homelab</p>
+            <h1 class="page-title">Home Lab & <span>Virtualization</span></h1>
+        </div>
+
+        <!-- Content -->
+        <div class="content-card">
+            <p>
+                My home lab is built around Proxmox and runs multiple virtual machines that support both my
+                day-to-day computing needs and ongoing learning. I use the environment to run and maintain
+                personal services, manage systems, and troubleshoot real-world issues, while also using it as a
+                safe environment to practice system administration, networking, virtualization, and other
+                technologies relevant to my professional work in IT.
+            </p>
+        </div>
+
+        <!-- Infrastructure Cards Grid -->
+        <div class="info-card-grid homelab-grid">
+
+            <!-- Proxmox -->
+            <div class="info-card">
+                <div class="homelab-icon">
+                    <img src="images/proxmox.png" alt="Proxmox logo">
+                </div>
+                <h2>Proxmox Virtual Environment</h2>
+                <p>
+                    Proxmox is the core of my environment, hosting and managing all of my virtual machines and containers on my network.
+                </p>
+            </div>
+
+            <!-- TrueNAS -->
+            <div class="info-card">
+                <div class="homelab-icon">
+                    <img src="images/truenas-core.png" alt="TrueNAS logo">
+                </div>
+                <h2>TrueNAS Storage</h2>
+                <p>
+                    TrueNAS provides centralized storage for my environment, handling file sharing,
+                    backups, and data organization.
+                </p>
+            </div>
+
+            <!-- Windows VMs -->
+            <div class="info-card">
+                <div class="homelab-icon">
+                    <img src="images/windows-11.png" alt="Windows 11 logo">
+                </div>
+                <h2>Windows Virtual Machines</h2><p>
+                My Windows VMs are used for both personal use and practicing system administration and troubleshooting
+                Windows-related issues. They also provide a controlled environment for testing configurations, software,
+                policies, and system changes before deploying them to other devices.
+            </p>
+            </div>
+
+            <!-- Linux VMs -->
+            <div class="info-card">
+                <div class="homelab-icon">
+                    <img src="images/linux.svg" alt="Linux logo">
+                </div>
+                <h2>Linux Server VMs</h2>
+                <p>
+                    My Linux VMs (Mint, Ubuntu, and Debian) are used for server-based workloads, hosting local
+                    network services, software development, and troubleshooting Linux environments. I also use
+                    them for AI and LLM experimentation, including running and testing local models and related services.
+                </p>
+            </div>
+
+            <!-- ADS-B Server -->
+            <div class="info-card">
+                <div class="homelab-icon">
+                    <img src="images/flightaware.png" alt="FlightAware logo">
+                </div>
+                <h2>ADS-B / FR24 Server</h2>
+                <p>
+                    A dedicated Ubuntu server collects and shares real-time aircraft data with platforms like
+                    FlightAware and Flightradar24.
+                </p>
+            </div>
+
+            <!-- Docker -->
+            <div class="info-card">
+                <div class="homelab-icon">
+                    <img src="images/docker.png" alt="Docker logo">
+                </div>
+                <h2>Docker & Network Services</h2>
+                <p>
+                    Docker is used to run lightweight services such as ad blocking and 3D printing server on my home network.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Skills Developed Card -->
+        <div class="content-card homelab-skills">
+            <h2>Skills Developed</h2>
+            <ul class="page-list">
+                <li>Virtual machine deployment and management</li>
+                <li>Linux command line administration</li>
+                <li>Windows troubleshooting and configuration</li>
+                <li>Storage and file sharing systems</li>
+                <li>Docker and container basics</li>
+                <li>Networking and service configuration</li>
+                <li>System troubleshooting and documentation</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== Footer ========== -->
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="footer-email">
+        <a href="mailto:nathan.rodarmel1@gmail.com">nathan.rodarmel1@gmail.com</a>
+    </p>
+
+    <p>© 2026 Nathan Rodarmel</p>
+
+    <p class="disclaimer">
+        <a href="disclaimer.html">Disclaimer</a>
+    </p>
+</footer>
+
+</body>
+</html>

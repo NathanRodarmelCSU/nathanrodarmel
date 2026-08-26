@@ -1,0 +1,187 @@
+<!--
+Name: Nathan Rodarmel
+Personal Portfolio Website
+coursework.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coursework | Nathan Rodarmel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav__content">
+        <div class="logo"><a href="index.html">Nathan Rodarmel</a></div>
+
+        <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <a href="contact.html" class="nav__button">Contact Me</a>
+    </div>
+</nav>
+
+<section class="section secondary-page coursework-page">
+    <div class="secondary-container">
+
+        <div class="secondary-header">
+            <p class="page-subtitle">Coursework</p>
+            <h1 class="page-title">Coursework <span>Projects</span></h1>
+            <p class="page-description secondary-description secondary-description--wide">
+                A selection of academic projects from my time at CSU which demonstrates my programming, system,
+                and problem-solving skills.
+            </p>
+        </div>
+
+
+        <!-- Slot 1: Software Engineering -->
+        <div class="course-project">
+            <div class="course-text">
+                <h2>CS314 - Software Engineering Trip Planner</h2>
+                <p>
+                    As part of a semester-long team software engineering project at
+                    Colorado State University, I helped develop a trip planning
+                    application that optimized travel routes between destinations while
+                    supporting airport search and nearby-location functionality using
+                    Java, REST APIs, MongoDB, Scrum-based Agile development practices,
+                    and collaborative GitHub workflows.
+                </p>
+            </div>
+            <div class="course-image">
+                <img src="images/cs314t36.png"
+                     alt="CS314 trip planning application showing an optimized route map"
+                     class="course-image-actual"
+                     style="object-fit: contain; background-color: #f3f0ef;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="course-image-placeholder" style="display:none;">Image</div>
+            </div>
+        </div>
+
+
+        <!-- Slot 2: Raspberry Pi -->
+        <div class="course-project reverse">
+            <div class="course-text">
+                <h2>Raspberry Pi Temperature & Humidity Monitor</h2>
+                <p>
+                    A team project for CS370 Operating Systems at CSU. The system used a DHT11 sensor
+                    connected to a Raspberry Pi 4B to collect real-time temperature and humidity readings,
+                    which were transmitted over TCP to a desktop application for live visualization.
+                    My role was building the desktop GUI client in C++ using the SFML library, including
+                    the TCP client connection, real-time data parsing, and a live-updating graphical plot
+                    of temperature and humidity trends.
+                </p>
+            </div>
+            <div class="course-image">
+                <img src="images/dht11cs370.png"
+                     alt="Raspberry Pi 4B wired to a DHT11 temperature and humidity sensor"
+                     class="course-image-actual"
+                     style="object-fit: contain; background-color: white;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="course-image-placeholder" style="display:none;">Image</div>
+            </div>
+        </div>
+
+
+        <!-- Slot 3: Portfolio Website -->
+        <div class="course-project">
+            <div class="course-text">
+                <h2>Portfolio Website</h2>
+                <p>
+                    Designed and developed this personal portfolio website using HTML and CSS.
+                    The project covered site planning, responsive layout design, and accessibility considerations.
+                    Initially built as the final project for JTC 372 at Colorado State University.
+                </p>
+            </div>
+            <div class="course-image">
+                <img src="images/mywebsite.jpeg"
+                     alt="Nathan Rodarmel personal portfolio website home page"
+                     class="course-image-actual"
+                     style="object-fit: cover; object-position: top;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="course-image-placeholder" style="display:none;">Image</div>
+            </div>
+        </div>
+
+
+        <!-- Slot 4: Adventurer's Guild -->
+        <div class="course-project reverse">
+            <div class="course-text">
+                <h2>The Adventurer's Guild</h2>
+                <p>
+                    A third-person action-adventure game built in Unity for CS462 Engaging in Virtual Worlds
+                    at CSU. The game follows Bob the Knight escaping a satirical corporate dungeon, battling
+                    skeleton enemies and a final boss. My role covered the majority of the core gameplay
+                    systems. I built the enemy AI using a finite state machine driven by Unity's NavMesh.
+                    Additionally, I developed the health and damage systems including enemy health bars and hit
+                    feedback, and implemented the health power-up system and environmental hazards. The game was
+                    built collaboratively by a five-person team using C#, with a low-poly art style, custom music,
+                    and custom cutscenes.
+                </p>
+            </div>
+            <div class="course-image">
+                <img src="images/advent.png"
+                     alt="The Adventurer's Guild game title screen with Play and Quit buttons"
+                     class="course-image-actual"
+                     style="object-fit: cover; object-position: center;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="course-image-placeholder" style="display:none;">Image</div>
+            </div>
+        </div>
+
+
+        <!-- Slot 5: Library Management -->
+        <div class="course-project">
+            <div class="course-text">
+                <h2>Library Media Management System</h2>
+                <p>
+                    A solo C++ capstone project for CSC2034 Computer Programing C++. Built a console-based inventory
+                    system for managing library media including books, movies, video games, and magazines.
+                    Used object-oriented design with a base <code>LibraryItem</code> class and derived
+                    subclasses, file I/O to load inventory from a text file, and a menu-driven interface
+                    for searching and managing the collection.
+                </p>
+            </div>
+            <div class="course-image">
+                <img src="images/CPP.png"
+                     alt="C++ logo"
+                     class="course-image-actual"
+                     style="object-fit: contain; background-color: #f3f0ef;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="course-image-placeholder" style="display:none;">Image</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="footer-email">
+        <a href="mailto:nathan.rodarmel1@gmail.com">nathan.rodarmel1@gmail.com</a>
+    </p>
+
+    <p>© 2026 Nathan Rodarmel</p>
+
+    <p class="disclaimer">
+        <a href="disclaimer.html">Disclaimer</a>
+    </p>
+</footer>
+
+</body>
+</html>

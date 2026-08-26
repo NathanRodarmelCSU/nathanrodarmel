@@ -1,0 +1,1301 @@
+/* Name: Nathan Rodarmel
+Personal Portfolio Website
+styles.css
+
+Notice: Some of this file has been organized with the use of Gen AI Tools*/
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&display=swap");
+
+/* ========================================================= */
+/* CSS Variables                                              */
+/* Colors, shadows, and sizing used across the entire site   */
+/* ========================================================= */
+
+:root {
+    --primary-color: #ef6c2f;
+    --primary-color-dark: #d85b22;
+    --secondary-color: #676767;
+
+    --text-color-dark: #161616;
+    --text-color-medium: #5f5f5f;
+    --text-color-light: #8a8a8a;
+
+    --page-background-color: #f3f0ef;
+    --footer-background-color: #f1ece8;
+    --card-background-color: #ffffff;
+
+    --placeholder-background-light: #dfd8d6;
+    --placeholder-background-dark: #d3cdcb;
+
+    --navigation-background-dark: #242424;
+    --navigation-background-dark-alt: #1f2421;
+
+    --maximum-content-width: 1150px;
+    --soft-box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ========================================================= */
+/* Reset and base styles                                      */
+/* ========================================================= */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    background-color: var(--page-background-color);
+    color: var(--text-color-dark);
+    overflow-x: hidden;
+}
+
+/* Remove default link underlines */
+a {
+    text-decoration: none;
+}
+
+/* ========================================================= */
+/* Shared layout and typography                               */
+/* Used across multiple pages                                 */
+/* ========================================================= */
+
+.section {
+    background-color: var(--page-background-color);
+}
+
+/* Small uppercase label above headings */
+.page-subtitle {
+    letter-spacing: 1.5px;
+    color: var(--text-color-dark);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Large bold page heading */
+.page-title {
+    font-family: "Outfit", sans-serif;
+    font-size: 3.1rem;
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--text-color-dark);
+    margin-bottom: 1.3rem;
+    letter-spacing: -1px;
+}
+
+/* Orange accent on span inside page-title */
+.page-title span {
+    color: var(--primary-color);
+}
+
+/* Body description text under headings */
+.page-description {
+    line-height: 1.85rem;
+    color: var(--text-color-medium);
+    margin-bottom: 2rem;
+    max-width: 32rem;
+    font-size: 1rem;
+}
+
+/* ========================================================= */
+/* Navigation (used on every page)                            */
+/* ========================================================= */
+
+nav {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--navigation-background-dark), var(--navigation-background-dark-alt));
+    z-index: 99;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Three-column grid: logo | links | button */
+.nav__content {
+    max-width: var(--maximum-content-width);
+    margin: auto;
+    min-height: 88px;
+    padding: 0 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    justify-self: start;
+}
+
+nav .logo a {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Logo hover */
+nav .logo a:hover {
+    color: var(--primary-color);
+}
+
+/* Logo click */
+nav .logo a:active {
+    color: var(--primary-color-dark);
+}
+
+/* Nav link list */
+.nav__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav__links li a {
+    padding: 0.35rem 0;
+    border-bottom: 2px solid transparent;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s;
+    font-size: 0.98rem;
+}
+
+/* Active and hover state for nav links */
+.nav__links li a:hover,
+.nav__links li a.active {
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Orange CTA button on far right */
+.nav__button {
+    justify-self: end;
+    display: inline-block;
+    padding: 0.95rem 1.4rem;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.96rem;
+    transition: 0.25s;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.nav__button:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-1px);
+}
+
+/* ========================================================= */
+/* Footer (used on every page)                                */
+/* ========================================================= */
+
+footer {
+    background-color: var(--footer-background-color);
+    padding: 2.5rem 1rem;
+    text-align: center;
+    color: var(--text-color-medium);
+    font-size: 0.92rem;
+}
+
+/* Navigation links row */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.9rem;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Email display */
+.footer-email {
+    margin: 0.35rem 0 0.25rem;
+    font-size: 0.9rem;
+    color: var(--text-color-medium);
+}
+
+.footer-email a,
+.footer-email a:link,
+.footer-email a:visited {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-email a:hover,
+.footer-email a:focus {
+    color: var(--primary-color-dark);
+    text-decoration: underline;
+}
+
+.footer-email a:active {
+    color: var(--primary-color-dark);
+}
+
+/* General paragraph spacing in footer */
+footer p {
+    margin: 0.25rem 0;
+}
+
+/* Disclaimer link at bottom of footer */
+.disclaimer {
+    font-size: 0.82rem;
+    color: var(--text-color-light);
+    margin-top: 0.75rem;
+}
+
+.disclaimer a {
+    color: var(--text-color-light);
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+.disclaimer a:hover {
+    color: var(--primary-color);
+}
+
+/* ========================================================= */
+/* Homepage (index.html)                                      */
+/* ========================================================= */
+
+/* Full-height hero container with two-column grid */
+.section__container {
+    min-height: calc(90vh - 90px);
+    max-width: var(--maximum-content-width);
+    margin: auto;
+    padding: 1rem 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 2.2rem;
+    align-items: center;
+}
+
+/* Left side: intro text column */
+.page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 590px;
+}
+
+/* CTA button row */
+.action__btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Shared styles for both CTA buttons */
+.action__btns button,
+.action__btns a {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 0.85rem 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    transition: 0.25s;
+    cursor: pointer;
+    font-family: "Manrope", sans-serif;
+    display: inline-block;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+}
+
+/* "My Projects" button - dark */
+.my_projects {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.my_projects:hover {
+    background-color: #232323;
+    transform: translateY(-2px);
+}
+
+/* "Contact Me" button - orange */
+.contact_me {
+    color: #ffffff;
+    background-color: var(--primary-color);
+}
+
+.contact_me:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+}
+
+/* ========================================================= */
+/* Homepage profile image / NR placeholder                    */
+/* ========================================================= */
+
+.profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Outer circle with gradient background */
+.image-placeholder {
+    width: min(20rem, 80%);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: linear-gradient(145deg, var(--placeholder-background-light), var(--placeholder-background-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--soft-box-shadow);
+    position: relative;
+}
+
+/* Inner ring decorative border */
+.image-placeholder::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Dark inner circle with NR initials */
+.image-placeholder__inner {
+    width: 74%;
+    height: 74%;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #2d2d31, #202522);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    z-index: 1;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* "NR" initials */
+.image-placeholder__inner span {
+    font-family: "Outfit", sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.65rem;
+}
+
+/* Caption text under initials */
+.image-placeholder__inner p {
+    color: #dddddd;
+    font-size: 0.98rem;
+}
+
+/* ========================================================= */
+/* Disclaimer page                                            */
+/* ========================================================= */
+
+/* Makes footer stick to bottom on short content pages */
+.disclaimer-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.disclaimer-page {
+    background-color: var(--page-background-color);
+    flex: 1;
+}
+
+.disclaimer-wrapper {
+    max-width: var(--maximum-content-width);
+    margin: 0 auto;
+    padding: 2.75rem 1.2rem 1rem;
+}
+
+.disclaimer-header {
+    max-width: 620px;
+    margin-bottom: 1.5rem;
+}
+
+.disclaimer-header .page-title {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    max-width: none;
+}
+
+/* Developer / Course / Built In metadata rows */
+.project-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.75rem;
+}
+
+.fact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.fact-label {
+    min-width: 80px;
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.fact-value {
+    color: var(--text-color-medium);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Small IDE logo icon */
+.tool-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Two-column layout for disclaimer + AI disclosure */
+.disclaimer-columns {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.disclaimer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.disclaimer-block {
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.disclaimer-block h2 {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.15;
+    margin-bottom: 0.45rem;
+    color: var(--text-color-dark);
+}
+
+.disclaimer-block p {
+    color: var(--text-color-medium);
+    line-height: 1.65;
+    font-size: 0.97rem;
+}
+
+.disclaimer-block ul {
+    margin-top: 0.35rem;
+    padding-left: 1.2rem;
+    color: var(--text-color-medium);
+    line-height: 1.65;
+    font-size: 0.97rem;
+}
+
+.disclaimer-block li + li {
+    margin-top: 0.2rem;
+}
+
+.disclaimer-block a,
+.page-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.disclaimer-block a:hover,
+.page-content a:hover {
+    text-decoration: underline;
+}
+
+/* Work in progress notice at the bottom */
+.disclaimer-note {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.disclaimer-note p {
+    color: var(--text-color-medium);
+    line-height: 1.65;
+    font-size: 0.97rem;
+    max-width: 760px;
+}
+
+/* ========================================================= */
+/* Secondary pages shared layout                              */
+/* Used by about, homelab, adsb, coursework, contact, resume  */
+/* ========================================================= */
+
+/* Padding for all secondary page sections */
+.secondary-page {
+    padding: 5.5rem 1rem 4.5rem;
+}
+
+/* Centered max-width wrapper */
+.secondary-container {
+    max-width: var(--maximum-content-width);
+    margin: 0 auto;
+}
+
+/* Centered page heading block */
+.secondary-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* Narrower description text in headers */
+.secondary-description {
+    max-width: 42rem;
+    margin-bottom: 0;
+}
+
+/* Center the description horizontally */
+.secondary-description--wide {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Two-column card grid used on most secondary pages */
+.info-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* White rounded card */
+.info-card {
+    padding: 1.6rem;
+    background-color: var(--card-background-color);
+    border-radius: 22px;
+    box-shadow: var(--soft-box-shadow);
+}
+
+/* Bulleted list used inside info cards */
+.page-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.page-list li {
+    margin-bottom: 0.45rem;
+}
+
+/* Muted subtext below card headings */
+.card-subtext {
+    color: var(--text-color-light);
+    margin-bottom: 0.35rem;
+}
+
+.card-copy {
+    margin-bottom: 1.2rem;
+}
+
+/* Two-column layout: text left, image/visual right */
+.secondary-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.secondary-text {
+    min-width: 0;
+}
+
+/* Visual side - centers the profile photo */
+.secondary-visual {
+    display: grid;
+    place-items: center;
+}
+
+/* White rounded content block */
+.content-card {
+    background-color: var(--card-background-color);
+    border-radius: 22px;
+    box-shadow: var(--soft-box-shadow);
+    padding: 1.7rem;
+}
+
+.content-card p {
+    color: var(--text-color-medium);
+    line-height: 1.85rem;
+    margin-bottom: 1rem;
+}
+
+.content-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Profile photo on about.html */
+.profile-panel {
+    width: min(26rem, 100%);
+    aspect-ratio: 3 / 4;
+    border-radius: 28px;
+    background: linear-gradient(
+            135deg,
+            var(--placeholder-background-dark),
+            var(--placeholder-background-light)
+    );
+    display: grid;
+    place-items: center;
+    box-shadow: var(--soft-box-shadow);
+    padding: 1.25rem;
+}
+
+/* Inner text for the NR placeholder on about.html */
+.profile-panel__inner {
+    text-align: center;
+    color: var(--primary-color-dark);
+}
+
+.profile-panel__inner span {
+    display: block;
+    font-family: "Outfit", sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.65rem;
+}
+
+.profile-panel__inner p {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+/* Extra top margin for the about page card grid */
+.about-card-grid {
+    margin-top: 2rem;
+}
+
+/* Stack layout on smaller screens */
+@media (max-width: 900px) {
+    .secondary-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Photo above text on mobile */
+    .secondary-visual {
+        order: -1;
+    }
+
+    .profile-panel {
+        width: min(22rem, 100%);
+    }
+}
+
+/* ========================================================= */
+/* Resume page                                                */
+/* ========================================================= */
+
+.resume-page .secondary-header {
+    margin-bottom: 2.75rem;
+}
+
+/* Cards align to top, not stretched */
+.resume-page .info-card-grid {
+    align-items: start;
+}
+
+.resume-page .info-card {
+    height: 100%;
+}
+
+/* Orange underline on card headings */
+.resume-page .info-card h2 {
+    padding-bottom: 0.65rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.resume-page .info-card strong {
+    color: var(--text-color-dark);
+    font-weight: 700;
+}
+
+.resume-page .card-subtext {
+    color: var(--text-color-light);
+    margin-bottom: 0.3rem;
+    line-height: 1.65rem;
+}
+
+.resume-page .card-copy {
+    margin-bottom: 1rem;
+}
+
+.resume-page .page-list {
+    margin-top: 0.85rem;
+    padding-left: 1.2rem;
+}
+
+.resume-page .page-list li {
+    color: var(--text-color-medium);
+    line-height: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.resume-page .page-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Professional strengths card at the bottom */
+.resume-note-card {
+    background-color: var(--card-background-color);
+    border-radius: 22px;
+    box-shadow: var(--soft-box-shadow);
+    padding: 1.6rem;
+    margin-top: 1.5rem;
+}
+
+.resume-note-card h2 {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.9rem;
+    color: var(--text-color-dark);
+}
+
+.resume-note-card p {
+    color: var(--text-color-medium);
+    line-height: 1.8rem;
+}
+
+.resume-page .resume-download-link {
+    display: inline-block;
+    margin-top: 0.9rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.resume-page .resume-download-link:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-1px);
+}
+
+/* Hero area above the cards: download button + skill pills */
+.resume-hero {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.resume-hero__actions {
+    margin-bottom: 2rem;
+}
+
+/* Orange PDF download button */
+.resume-download-button {
+    display: inline-block;
+    padding: 0.95rem 1.5rem;
+    border-radius: 14px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.98rem;
+    transition: 0.25s;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.resume-download-button:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-1px);
+}
+
+/* Horizontal scrolling row of skill pills */
+.resume-tag-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 100%;
+    margin: 0 auto 0.5rem;
+    overflow-x: auto;
+    padding: 0.25rem 0;
+}
+
+/* Individual skill pill */
+.resume-tag-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    background-color: var(--card-background-color);
+    color: var(--text-color-medium);
+    font-weight: 700;
+    font-size: 0.88rem;
+    box-shadow: var(--soft-box-shadow);
+}
+
+/* Skill group heading inside Technical Skills card */
+.resume-page .info-card h3 {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.05rem;
+    color: var(--text-color-dark);
+    margin-bottom: 0.35rem;
+}
+
+/* Each skill category block */
+.resume-skill-group {
+    margin-bottom: 1.15rem;
+}
+
+.resume-skill-group:last-child {
+    margin-bottom: 0;
+}
+
+.resume-skill-group p {
+    color: var(--text-color-medium);
+    line-height: 1.7rem;
+    margin-bottom: 0;
+}
+
+/* Resume responsive breakpoints */
+@media (max-width: 900px) {
+    .info-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-page .secondary-header {
+        margin-bottom: 2.25rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .secondary-page {
+        padding: 7rem 1rem 4rem;
+    }
+
+    .resume-page .info-card {
+        padding: 1.35rem;
+    }
+
+    .resume-note-card {
+        padding: 1.35rem;
+    }
+}
+
+/* ========================================================= */
+/* Contact page                                               */
+/* ========================================================= */
+
+.contact-page .secondary-header {
+    margin-bottom: 2.25rem;
+}
+
+/* Center-align all contact cards */
+.contact-page .info-card {
+    text-align: center;
+}
+
+.contact-page .info-card h2 {
+    margin-bottom: 0.6rem;
+}
+
+.contact-page .info-card a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact-page .info-card a:hover {
+    color: var(--primary-color-dark);
+    text-decoration: underline;
+}
+
+/* ========================================================= */
+/* Projects page                                              */
+/* ========================================================= */
+
+/* Three-column card grid */
+.project-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Anchor wrapping each project card */
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Individual project card */
+.project-card-new {
+    background-color: var(--card-background-color);
+    border-radius: 22px;
+    padding: 1.5rem;
+    box-shadow: var(--soft-box-shadow);
+    height: 100%;
+    transition: 0.25s;
+}
+
+/* Lift effect on hover */
+.project-link:hover .project-card-new {
+    transform: translateY(-4px);
+}
+
+.project-card-new h2 {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.25rem;
+    color: var(--text-color-dark);
+    margin-bottom: 0.8rem;
+}
+
+.project-card-new p {
+    color: var(--text-color-medium);
+    line-height: 1.75rem;
+    font-size: 0.96rem;
+}
+
+/* Gray placeholder shown when no image is present */
+.project-image-placeholder-new {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+    background: linear-gradient(
+            135deg,
+            var(--placeholder-background-dark),
+            var(--placeholder-background-light)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color-dark);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Wrapper that holds both the real image and the fallback placeholder */
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 1rem;
+    background: linear-gradient(
+            135deg,
+            var(--placeholder-background-dark),
+            var(--placeholder-background-light)
+    );
+}
+
+/* Real project image */
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Placeholder sits behind the real image inside the wrapper */
+.project-image-wrapper .project-image-placeholder-new {
+    position: absolute;
+    inset: 0;
+    margin-bottom: 0;
+    z-index: 0;
+}
+
+.project-image-wrapper .project-image {
+    position: relative;
+    z-index: 1;
+}
+
+/* Stack to single column on smaller screens */
+@media (max-width: 900px) {
+    .project-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================================= */
+/* Homelab page                                               */
+/* ========================================================= */
+
+/* Top margin for the infrastructure cards grid */
+.homelab-grid {
+    margin-top: 2rem;
+}
+
+/* Top margin for the skills card at the bottom */
+.homelab-skills {
+    margin-top: 2rem;
+}
+
+/* Square icon container above each card heading */
+.homelab-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 0.75rem;
+    border-radius: 12px;
+    background-color: var(--footer-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homelab-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.homelab-page .secondary-header {
+    margin-bottom: 2rem;
+}
+
+/* ========================================================= */
+/* Coursework page (also used by adsb.html aviation page)     */
+/* ========================================================= */
+
+/* Alternating two-column row: text left, image right */
+.course-project {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+/* Reversed row: image left, text right */
+.course-project.reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+}
+
+/* Push text to second column in reversed rows */
+.course-project.reverse .course-text {
+    order: 2;
+}
+
+/* Pull image to first column in reversed rows */
+.course-project.reverse .course-image {
+    order: 1;
+}
+
+/* Project title */
+.course-text h2 {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-color-dark);
+}
+
+/* Project description */
+.course-text p {
+    color: var(--text-color-medium);
+    line-height: 1.85rem;
+}
+
+/* Centers the image within its column */
+.course-image {
+    display: flex;
+    justify-content: center;
+}
+
+/* Gray placeholder shown before a real image is added */
+.course-image-placeholder {
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+    background: linear-gradient(
+            135deg,
+            var(--placeholder-background-dark),
+            var(--placeholder-background-light)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--primary-color-dark);
+    box-shadow: var(--soft-box-shadow);
+}
+
+/* Real project screenshot image */
+.course-image-actual {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--soft-box-shadow);
+    background-color: var(--placeholder-background-dark);
+}
+
+/* Stack to single column on smaller screens */
+@media (max-width: 900px) {
+    .course-project,
+    .course-project.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    /* On mobile, always show image above text for both normal and reversed rows */
+    .course-project .course-image,
+    .course-project.reverse .course-image {
+        order: -1;
+    }
+
+    .course-project .course-text,
+    .course-project.reverse .course-text {
+        order: 0;
+    }
+}
+
+/* ========================================================= */
+/* Responsive styles                                          */
+/* ========================================================= */
+
+/* Tablet: stack nav, center hero */
+@media (max-width: 980px) {
+    .nav__content {
+        grid-template-columns: 1fr;
+        padding: 1rem 1.2rem 1.2rem;
+    }
+
+    .logo,
+    .nav__button {
+        justify-self: center;
+    }
+
+    .nav__links {
+        flex-wrap: wrap;
+        gap: 1rem 1.5rem;
+    }
+
+    /* Stack hero to single column */
+    .section__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 3rem 1.2rem 3.5rem;
+        gap: 2.5rem;
+    }
+
+    .page-content {
+        max-width: 100%;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .page-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .action__btns {
+        justify-content: center;
+    }
+
+    .image-placeholder {
+        width: min(21rem, 86vw);
+    }
+
+    /* Stack disclaimer columns */
+    .disclaimer-columns {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .disclaimer-header .page-title {
+        font-size: 2rem;
+        max-width: none;
+    }
+}
+
+/* Mobile: smaller headings and spacing */
+@media (max-width: 700px) {
+    .page-title {
+        font-size: 2.9rem;
+    }
+
+    .section__container {
+        min-height: auto;
+        padding-top: 2.5rem;
+    }
+
+    .nav__button {
+        padding: 0.85rem 1.2rem;
+    }
+
+    .disclaimer-wrapper {
+        padding: 1.5rem 1rem 2.5rem;
+    }
+
+    .disclaimer-header .page-title {
+        font-size: 1.85rem;
+    }
+
+    .disclaimer-block h2 {
+        font-size: 1.15rem;
+    }
+
+    .fact-item {
+        gap: 0.5rem;
+    }
+
+    .fact-label {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+/* Small mobile: tightest spacing */
+@media (max-width: 500px) {
+    .page-title {
+        font-size: 2.35rem;
+    }
+
+    .page-description {
+        font-size: 0.96rem;
+        line-height: 1.75rem;
+    }
+
+    /* Full-width buttons on small screens */
+    .action__btns button,
+    .action__btns a {
+        width: 100%;
+    }
+
+    .nav__links li a {
+        font-size: 0.93rem;
+    }
+
+    .logo a {
+        font-size: 1.35rem;
+    }
+}

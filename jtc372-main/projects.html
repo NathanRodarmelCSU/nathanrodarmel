@@ -1,0 +1,134 @@
+<!--
+Name: Nathan Rodarmel
+Personal Portfolio Website
+projects.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Nathan Rodarmel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ========== Navigation ========== -->
+<nav>
+    <div class="nav__content">
+        <div class="logo"><a href="index.html">Nathan Rodarmel</a></div>
+
+        <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <a href="contact.html" class="nav__button">Contact Me</a>
+    </div>
+</nav>
+
+<!-- ========== Projects Section ========== -->
+<section class="section secondary-page projects-page">
+    <div class="secondary-container">
+
+        <!-- Page Header -->
+        <div class="secondary-header">
+            <p class="page-subtitle">PROJECTS</p>
+            <h1 class="page-title">Selected <span>Technical Work</span></h1>
+            <p class="page-description secondary-description secondary-description--wide">
+                A collection of academic and personal projects that demonstrate my
+                interests in IT systems, networking, virtualization, and problem solving.
+            </p>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="project-card-grid">
+
+            <!-- Card 1: Home Lab -->
+            <a href="homelab.html" class="project-link" aria-label="View Home Lab project">
+                <article class="project-card-new">
+                    <div class="project-image-wrapper">
+                        <img src="images/proxmoxve.png"
+                             alt="Proxmox dashboard showing virtual machines in a home lab environment"
+                             class="project-image"
+                             style="object-position: left center;"
+                             onerror="this.style.display='none';">
+
+                        <div class="project-image-placeholder-new">Home Lab</div>
+                    </div>
+                    <h2>Home Lab</h2>
+                    <p>
+                        Built and manage a personal home lab using Proxmox VE, hosting multiple virtual machines for various IT projects and experimentation.
+                    </p>
+                </article>
+            </a>
+
+            <!-- Card 2: Aviation -->
+            <a href="adsb.html" class="project-link" aria-label="View Aviation page">
+                <article class="project-card-new">
+                    <div class="project-image-wrapper">
+                        <img src="images/fr24nr.png"
+                             alt="Flight tracking map showing live ADS-B data"
+                             class="project-image"
+                             onerror="this.style.display='none';">
+
+                        <div class="project-image-placeholder-new">Aviation</div>
+                    </div>
+                    <h2>Aviation</h2>
+                    <p>
+                        A personal interest spanning ADS-B flight tracking, UAV operations,
+                        and working toward a Private Pilot License.
+                    </p>
+                </article>
+            </a>
+
+            <!-- Card 3: Coursework -->
+            <a href="coursework.html" class="project-link" aria-label="View Computer Science Coursework projects">
+                <article class="project-card-new">
+                    <div class="project-image-wrapper">
+                        <img src="images/projects.png"
+                             alt="Java code from CS314 software engineering project"
+                             class="project-image"
+                             onerror="this.style.display='none';">
+
+                        <div class="project-image-placeholder-new">Coursework</div>
+                    </div>
+                    <h2>Computer Science Coursework</h2>
+                    <p>
+                        Academic projects covering software development, systems, databases,
+                        networking, testing, and team-based problem solving.
+                    </p>
+                </article>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== Footer ========== -->
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="footer-email">
+        <a href="mailto:nathan.rodarmel1@gmail.com">nathan.rodarmel1@gmail.com</a>
+    </p>
+
+    <p>© 2026 Nathan Rodarmel</p>
+
+    <p class="disclaimer">
+        <a href="disclaimer.html">Disclaimer</a>
+    </p>
+</footer>
+
+</body>
+</html>

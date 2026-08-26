@@ -1,0 +1,141 @@
+<!--
+Name: Nathan Rodarmel
+Personal Portfolio Website
+adsb.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation | Nathan Rodarmel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav__content">
+        <div class="logo"><a href="index.html">Nathan Rodarmel</a></div>
+
+        <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <a href="contact.html" class="nav__button">Contact Me</a>
+    </div>
+</nav>
+
+<section class="section secondary-page">
+    <div class="secondary-container">
+
+        <div class="secondary-header">
+            <p class="page-subtitle">AVIATION</p>
+            <h1 class="page-title">Flying & <span>Aerospace</span></h1>
+            <p class="page-description secondary-description secondary-description--wide">
+                Aviation has been a long time interest of mine that spans across recreational flying,
+                UAV operations, and aviation technology.
+            </p>
+        </div>
+
+        <!-- Section 1: ADS-B -->
+        <div class="course-project">
+            <div class="course-text">
+                <h2>ADS-B Flight Tracking</h2>
+                <p>
+                    ADS-B (Automatic Dependent Surveillance-Broadcast) is a technology aircraft use to
+                    broadcast their position in real time. My station is built from a dedicated Ubuntu server
+                    with an ADS-B receiver that continuously decodes aircraft signals and feeds live
+                    data to FlightAware, Flightradar24, and ADS-B Exchange. The system runs around
+                    the clock and is monitored using the Graphs1090 interface for signal quality and
+                    message rates.
+                </p>
+                <br>
+                <a href="https://www.flightaware.com/adsb/stats/user/narod#stats-252264"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="View FlightAware ADS-B statistics page"
+                   style="color: var(--primary-color); font-weight: 600;">
+                    View FlightAware Stats
+                </a>
+            </div>
+            <div class="course-image">
+                <img src="images/fr24nr.png"
+                     alt="Screenshot of live ADS-B flight tracking map"
+                     class="course-image-actual"
+                     style="object-fit: cover; object-position: center;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="course-image-placeholder" style="display:none;">ADS-B</div>
+            </div>
+        </div>
+
+        <!-- Section 2: UAV -->
+        <div class="course-project reverse">
+            <div class="course-text">
+                <h2>UAV / Drone Operations</h2>
+                <p>
+                    Currently working toward my FAA Part 107 Remote Pilot Certificate, which covers
+                    commercial drone operations in the National Airspace System. Part 107 requires
+                    knowledge of airspace classifications, weather, regulations, and safe drone
+                    operating procedures.
+                </p>
+            </div>
+            <div class="course-image">
+                <img src="images/uav.jpg"
+                     alt="UAV drone in flight"
+                     class="course-image-actual"
+                     style="object-fit: cover; object-position: center;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="course-image-placeholder" style="display:none;">UAV</div>
+            </div>
+        </div>
+
+        <!-- Section 3: PPL -->
+        <div class="course-project">
+            <div class="course-text">
+                <h2>Private Pilot Certificate</h2>
+                <p>
+                    Currently working towards my Private Pilot License (PPL). The PPL program covers
+                    aircraft systems, flight maneuvers, navigation, weather interpretation, and airspace
+                    regulations, all of which is needed to safely operate an aircraft. I love aviation and
+                    I am excited to work towards this goal.
+                </p>
+            </div>
+            <div class="course-image">
+                <img src="images/ppl.jpg"
+                     alt="Small aircraft used for private pilot training"
+                     class="course-image-actual"
+                     style="object-fit: cover; object-position: center;"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="course-image-placeholder" style="display:none;">PPL</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="footer-email">
+        <a href="mailto:nathan.rodarmel1@gmail.com">nathan.rodarmel1@gmail.com</a>
+    </p>
+
+    <p>© 2026 Nathan Rodarmel</p>
+
+    <p class="disclaimer">
+        <a href="disclaimer.html">Disclaimer</a>
+    </p>
+</footer>
+
+</body>
+</html>
