@@ -1,2 +1,2 @@
-# nathanrodarmel
-Personal Portfolio Website for Nathan Rodarmel
+# jtc372
+Nathan Rodarmels Personal Portfolio Website 
